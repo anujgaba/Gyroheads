@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYRO HEADS | The Apex of Analog Engineering</title>
+    <style>
+        :root {
+            --obsidian: #070707;
+            --charcoal: #111111;
+            --bronze: #cd7f32;
+            --gold: #c5a059;
+            --copper: #b87333;
+            --text-main: #f4f4f4;
+            --text-dim: #999;
+            --border: rgba(205, 127, 50, 0.2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--obsidian);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'Inter', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 1rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(7, 7, 7, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-container img {
+            height: 70px;
+            width: auto;
+        }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 35px; }
+        nav ul li a { text-decoration: none; color: var(--text-dim); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; transition: 0.4s; }
+        nav ul li a:hover { color: var(--bronze); }
+
+        /* --- Hero --- */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1c1814 0%, #070707 100%);
+            padding: 0 5%;
+        }
+
+        .hero h1 { 
+            font-size: clamp(3rem, 10vw, 6.5rem); 
+            font-weight: 200; 
+            letter-spacing: 15px; 
+            margin-bottom: 1rem; 
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .hero p { 
+            font-size: 0.9rem; 
+            color: var(--bronze); 
+            letter-spacing: 6px; 
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .scroll-line {
+            width: 1px; height: 100px;
+            background: linear-gradient(to bottom, var(--bronze), transparent);
+            position: absolute; bottom: 0;
+        }
+
+        /* --- Section Styling --- */
+        section { padding: 140px 10%; max-width: 1500px; margin: 0 auto; }
+        .section-tag { color: var(--gold); font-size: 0.65rem; letter-spacing: 7px; text-transform: uppercase; display: block; margin-bottom: 25px; text-align: center;}
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+        
+        h2 { font-size: 3rem; font-weight: 300; margin-bottom: 30px; letter-spacing: 2px; line-height: 1.2;}
+        .accent-text { color: var(--bronze); }
+
+        .amp-mockup {
+            width: 100%;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+            border-radius: 4px;
+        }
+
+        /* --- Technical Details Block --- */
+        .tech-feature {
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+            margin-top: 40px;
+        }
+
+        .tech-feature h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
+        .tech-feature p { font-size: 0.95rem; color: var(--text-dim); }
+
+        /* --- Specs --- */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2px;
+            background: var(--border);
+            margin-top: 60px;
+            border: 1px solid var(--border);
+        }
+
+        .spec-item {
+            background: var(--obsidian);
+            padding: 50px;
+            text-align: center;
+        }
+
+        .spec-item label { display: block; font-size: 0.65rem; color: var(--bronze); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; }
+        .spec-item value { font-size: 1.2rem; color: var(--text-main); font-weight: 300; }
+
+        /* --- CTA --- */
+        .cta-box {
+            text-align: center;
+            background: var(--charcoal);
+            padding: 120px 50px;
+            border: 1px solid var(--border);
+            margin: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 24px 70px;
+            border: 1px solid var(--bronze);
+            color: var(--bronze);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.85rem;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background: var(--bronze);
+            color: #fff;
+            box-shadow: 0 0 50px rgba(205, 127, 50, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: #444;
+        }
+
+        @media (max-width: 1000px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 60px; }
+            section { padding: 80px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="logo.png" alt="GYRO HEADS">
+        </div>
+        <ul>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#specs">Technical Data</a></li>
+            <li><a href="#inquiry">Inquiry</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <p>A New Standard in High-Fidelity</p>
+        <h1>GH01 - GEMINI</h1>
+        <div class="scroll-line"></div>
+    </header>
+
+    <section id="engineering">
+        <span class="section-tag">Internal Architecture</span>
+        <div class="grid-2">
+            <div>
+                <h2>Galvanic Isolation & <br><span class="accent-text">Signal Purity</span></h2>
+                <p>The GH-01 Gemini is a sanctuary for your audio signal. Utilizing a <strong>Dual-Mono Path</strong> architecture, we ensure zero crosstalk between channels. Every electron is guided through oxygen-free copper pathways, shielded by a chassis carved from a single block of aerospace-grade aluminum.</p>
+                
+                <div class="tech-feature">
+                    <h3>Aether-Shield™ Technology</h3>
+                    <p>In an age of wireless noise, the Gemini stands silent. Our proprietary shielding suppresses electromagnetic interference from modern signals, providing a noise floor that is effectively subterranean.</p>
+                </div>
+
+                <div class="tech-feature">
+                    <h3>The Gyro-Stabilized Core</h3>
+                    <p>The "Gyro" in our name refers to our floating transformer mount. By suspending the power supply on a triple-axis silicone cradle, we eliminate 99.9% of mechanical vibration before it reaches the output stage.</p>
+                </div>
+            </div>
+            <div>
+                <img src="amp.png" alt="GH01 Gemini" class="amp-mockup">
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" style="background: rgba(255,255,255,0.01);">
+        <span class="section-tag">Our Philosophy</span>
+        <div class="grid-2">
+            <div style="order: 2;">
+                <h2>Built for the <br><span class="accent-text">100-Year Life</span></h2>
+                <p>We reject planned obsolescence. The GH01 Gemini is built with discrete components that can be serviced and loved for decades. We do not use integrated circuits that fail; we use silver-plated hand-wiring and vintage-stock capacitors chosen for their specific harmonic profile.</p>
+                <br>
+                <p>When you own a Gyro Head, you are not just a customer; you are a custodian of sound. Each unit takes 45 days to calibrate and "burn-in" before it enters your listening room.</p>
+            </div>
+            <div style="text-align: center; order: 1;">
+                <h3 style="color: var(--gold); letter-spacing: 5px; border: 1px solid var(--border); padding: 60px; display: inline-block;">CRYOGENIC<br>WIRING</h3>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-dim);">All internal cabling undergoes a 72-hour deep-freeze treatment to realign molecular structures.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs">
+        <span class="section-tag">Measured Perfection</span>
+        <h2 style="text-align: center;">Technical Specifications</h2>
+        
+        <div class="specs-grid">
+            <div class="spec-item">
+                <label>Power Output</label>
+                <value>50W Class A / 200W Class AB</value>
+            </div>
+            <div class="spec-item">
+                <label>Topology</label>
+                <value>Pure Parallel Ultra-Linear</value>
+            </div>
+            <div class="spec-item">
+                <label>THD + Noise</label>
+                <value>&lt; 0.0005% @ 1kHz</value>
+            </div>
+            <div class="spec-item">
+                <label>Weight</label>
+                <value>34.2kg Carbon Steel & Copper</value>
+            </div>
+            <div class="spec-item">
+                <label>Connectors</label>
+                <value>Solid Silver Core / 24k Gold</value>
+            </div>
+            <div class="spec-item">
+                <label>Bandwidth</label>
+                <value>2Hz — 150kHz (+0/-3dB)</value>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry">
+        <div class="cta-box">
+            <span class="section-tag">Limited Commission</span>
+            <h2>One Unit. One Craftsman.</h2>
+            <p style="max-width: 700px; margin: 0 auto 40px; color: var(--text-dim);">Each unit is serialized, registered, and etched with the owner's name. Due to the time required for hand-calibration, we only accept a limited number of commissions per quarter.</p>
+            <a href="mailto:vault@gyroheads.com" class="btn">Initiate Commission</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>GYRO HEADS AUDIO LABS &copy; 2026</p>
+        <p style="margin-top: 10px; color: #333; font-size: 0.6rem;">LONDON | ZURICH | TOKYO</p>
+    </footer>
+
+</body>
+</html>
